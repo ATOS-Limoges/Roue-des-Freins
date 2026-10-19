@@ -236,9 +236,8 @@ body{background:#F3F7F4}
  .nav{top:0;border-bottom:1px solid #DCE8E0}
  .nav .wrap{padding:9px 14px;gap:8px}
  .crumbs{font-size:12px;flex:1}
- .navbtns{margin-left:0;gap:8px;width:100%}
- .navbtns .btn{flex:1;justify-content:center;min-height:50px;font-size:16px;padding:13px 14px;border-radius:15px}
- .app-tab{min-height:52px;font-size:15px}
+ .navbtns{margin-left:0;gap:6px}
+ .btn{font-size:13px;padding:9px 11px}
  .app-bottomnav{position:fixed;z-index:20;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr;gap:8px;padding:9px 18px calc(9px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.95);border-top:1px solid #DDE8E0;box-shadow:0 -8px 25px rgba(26,65,43,.08);backdrop-filter:blur(16px)}
  .app-tab{appearance:none;border:0;background:transparent;color:#34483D;display:flex;align-items:center;justify-content:center;gap:8px;min-height:47px;border-radius:15px;font:700 14px var(--body);cursor:pointer}
  .app-tab .tab-icon{font-size:20px;line-height:1}
@@ -258,14 +257,11 @@ body{background:#F3F7F4}
     <nav class="crumbs" id="crumbs" aria-label="Fil d'Ariane"></nav>
     <div class="navbtns">
       <button class="btn" id="back" type="button">&larr; Retour</button>
-      <button class="btn primary" id="home" type="button">⌂ Accueil</button>
+      <button class="btn primary" id="home" type="button">Menu principal</button>
     </div>
   </div>
 </header>
 <main class="wrap" id="app"></main>
-<nav class="app-bottomnav" aria-label="Navigation principale">
-  <button class="app-tab" id="tab-home" type="button"><span class="tab-icon" aria-hidden="true">⌂</span>Accueil</button>
-</nav>
 
 <script>
 /* =====================================================================
@@ -584,11 +580,11 @@ const FREINS = [
    contact:{structure:"Maisons du Département de la Haute-Vienne", adresse:"Nord-agglo : 36 allée Fabre d'Églantine, 87280 Limoges. Sud-agglo : 2 rue de la Résistance Limousine, 87000 Limoges.", tel:"", mail:"", horaires:"", site:"https://www.haute-vienne.fr"} },
     { id:"cite-emploi", nom:"Cité de l'emploi de Limoges", type:"Guichet unique",
    resume:"Un lieu qui réunit orientation, accompagnement renforcé, numérique et bilan linguistique.",
-   presentation:"Labellisée par l'État et copilotée par Limoges Métropole et la Préfecture, la Cité de l'emploi a été inaugurée en juin 2022 pour créer des synergies entre acteurs de l'emploi.",
+   presentation:"Labellisée par l'État et copilotée par Limoges Métropole et la Préfecture, la re a été inaugurée en juin 2022 pour créer des synergies entre acteurs de l'emploi.",
    propose:["Accueil, orientation et coordination (Limoges Métropole)", "Accompagnement numérique", "Accompagnement renforcé (Varlin Pont Neuf, PLIE)", "Bilans linguistiques (CLAP Sud-Ouest)"],
    eligibilite:["Habitants du territoire, en priorité des quartiers prioritaires ; à confirmer"],
    acces:"Accueil direct ou orientation par un prescripteur ; à confirmer.",
-   contact:{structure:"Cité de l'emploi, Limoges Métropole", adresse:"8 rue Fabre d'Églantine, Limoges", tel:"", mail:"", horaires:"", site:"https://www.limoges-metropole.fr"} }
+   contact:{structure:"Cité de l'emploi, Limoges Métropole", adresse:"8 rue Fabre d'Églantine, Limoges", tel:"05 87 14 10 10", mail:"", horaires:"", site:"https://www.limoges-metropole.fr"} }
    ]},
  { id:"prescripteurs", nom:"Prescripteurs emploi", couleur:"--f10",
    intro:"Les acteurs qui orientent et accompagnent les personnes vers l'emploi et l'insertion : France Travail, Cap emploi, missions locales, ARPE, PLIE et assistants sociaux du Département.",
@@ -649,13 +645,6 @@ const FREINS = [
          {nom:"Emploi accompagné (Handicap)", couleur:"--f4", desc:"Accompagnement dans la durée de la personne en situation de handicap et de son employeur, pour accéder à l'emploi ou s'y maintenir."}],
    intro:"Les emplois adaptés et accompagnés de Haute-Vienne, en trois catégories : structures d'insertion par l'activité économique (SIAE), entreprises adaptées et dispositif d'emploi accompagné.",
    solutions:[
-    { id:"siae-atos", nom:"ATOS", type:"AI", cat:"SIAE",
-      resume:"Activités : bâtiment Travaux Publics ; environnement, entretien et aménagement des espaces verts et naturels ; nettoyage, propreté (hors SAP) ; services à la personne.",
-      presentation:"Association intermédiaire de Limoges. ATOS met à disposition des demandeurs d’emploi auprès de particuliers, d’associations, de collectivités et d’entreprises, avec un accompagnement socio-professionnel. Informations et activités référencées par INAÉ Nouvelle-Aquitaine.",
-      propose:["Contrat de travail en insertion et mise à disposition auprès de clients-utilisateurs", "Accompagnement socio-professionnel", "Activité : Bâtiment Travaux Publics", "Activité : Environnement, entretien et aménagement des espaces verts et naturels", "Activité : Nettoyage, propreté (hors SAP)", "Activité : Services à la personne"],
-      eligibilite:["Agrément (Pass IAE) délivré par France Travail", "Prescription par France Travail, Mission locale, Cap emploi ou un référent social"],
-      acces:"Contacter ATOS pour connaître les modalités d’orientation et les besoins en recrutement.",
-      contact:{structure:"ATOS – Association intermédiaire", adresse:"7 rue Cugnot, 87023 Limoges Cedex", tel:"05 55 35 04 07", mail:"ass.atos@orange.fr", horaires:"", site:"https://inae-nouvelleaquitaine.org/structures/atos/"} },
     { id:"siae-ei-de-la-gartempe", nom:"EI de la Gartempe", type:"EI", cat:"SIAE",
       resume:"Activités : déchets : collecte, traitement, recyclage ; environnement, entretien et aménagement des espaces verts et naturels ; nettoyage, propreté (hors SAP).",
       presentation:"L'entreprise d'insertion emploie en contrat d'insertion des personnes éloignées de l'emploi, avec un accompagnement. Source des activités : annuaire INAÉ Nouvelle-Aquitaine.",
@@ -1145,24 +1134,17 @@ function renderFiche(f, s){
 
 const tabSearch = document.getElementById('tab-search');
 function setMobileTab(which){
-  if (tabSearch) tabSearch.classList.toggle('active', which === 'search');
-  const tabHome = document.getElementById('tab-home');
-  if (tabHome) tabHome.classList.toggle('active', which === 'home');
+  tabSearch.classList.toggle('active', which === 'search');
 }
-if (tabSearch) {
-  tabSearch.addEventListener('click', () => {
-    if(location.hash) go('');
-    setMobileTab('search');
-    window.setTimeout(() => {
-      const field = document.getElementById('solution-search');
-      if(field){ field.scrollIntoView({behavior:'smooth',block:'center'}); field.focus({preventScroll:true}); }
-    }, 80);
-  });
-}
-const topHome = document.getElementById('home');
-if (topHome) topHome.addEventListener('click', () => { go(''); setMobileTab('home'); });
-const bottomHome = document.getElementById('tab-home');
-if (bottomHome) bottomHome.addEventListener('click', () => { go(''); setMobileTab('home'); });
+tabSearch.addEventListener('click', () => {
+  if(location.hash) go('');
+  setMobileTab('search');
+  window.setTimeout(() => {
+    const field = document.getElementById('solution-search');
+    if(field){ field.scrollIntoView({behavior:'smooth',block:'center'}); field.focus({preventScroll:true}); }
+  }, 80);
+});
+document.getElementById('home').addEventListener('click', () => { go(''); setMobileTab('home'); });
 document.getElementById('back').addEventListener('click', () => {
   const [fid, sid] = location.hash.replace('#','').split('.');
   go(sid ? fid : '');

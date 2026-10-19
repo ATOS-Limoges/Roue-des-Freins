@@ -1,4 +1,4 @@
-const CACHE_NAME = 'roue-freins-emploi-v10';
+const CACHE_NAME = 'roue-freins-emploi-v1';
 const APP_SHELL = [
   './',
   './index.html',
